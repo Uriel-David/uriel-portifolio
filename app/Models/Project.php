@@ -9,10 +9,10 @@ class Project extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['name', 'image'];
+    protected $fillable = ['skill_id', 'name', 'image', 'project_url'];
 
-    public function projects()
+    public function skill()
     {
-        return $this->hasMany(Project::class);
+        return $this->belongsTo(Skill::class);
     }
 }
