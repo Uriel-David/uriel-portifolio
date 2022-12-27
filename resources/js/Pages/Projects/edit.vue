@@ -5,29 +5,37 @@ import InputLabel from '@/Components/InputLabel.vue';
 import PrimaryButton from '@/Components/PrimaryButton.vue';
 import TextInput from '@/Components/TextInput.vue';
 import { Head, useForm } from '@inertiajs/inertia-vue3';
+import { Inertia } from '@inertiajs/inertia';
 
-defineProps({
-    skills: Array
+const props = defineProps({
+    skills: Array,
+    project: Object,
 });
 
 const form = useForm({
-    name: '',
+    name: props.project?.name,
     image: null,
-    skill_id: '',
-    project_url: '',
+    skill_id: props.project?.skill_id,
+    project_url: props.project?.project_url,
 });
 
 const submit = () => {
-    form.post(route('projects.store'));
+    Inertia.post(`/projects/${props.project.id}`, {
+        _method: "put",
+        name: form.name,
+        image: form.image,
+        skill_id: form.skill_id,
+        project_url: form.project_url
+    });
 };
 </script>
 
 <template>
-    <Head title="New Project" />
+    <Head title="Edit Project" />
 
     <AuthenticatedLayout>
         <template #header>
-            <h2 class="font-semibold text-xl text-gray-800 leading-tight">New Project</h2>
+            <h2 class="font-semibold text-xl text-gray-800 leading-tight">Edit Project</h2>
         </template>
 
         <div class="py-12">
@@ -103,7 +111,7 @@ const submit = () => {
 
                     <div class="flex items-center justify-end mt-4">
                         <PrimaryButton class="ml-4" :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
-                            Store
+                            Update
                         </PrimaryButton>
                     </div>
                 </form>

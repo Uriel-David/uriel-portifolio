@@ -53,7 +53,9 @@ defineProps({
                                         class="w-12 h-12 rounded-full" />
                                 </td>
                                 <td class="py-4 px-6">
-                                    Edit/Delete
+                                    <Link :href="route('skills.edit', skill.id)" class="font-medium text-blue-500 hover:text-blue-700 mr-2">edit</Link>
+                                    /
+                                    <Link :href="route('skills.destroy', skill.id)" class="font-medium text-red-500 hover:text-red-700 mr-2" method="delete" as="button" type="button">delete</Link>
                                 </td>
                             </tr>
                         </tbody>

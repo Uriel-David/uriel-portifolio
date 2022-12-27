@@ -5,61 +5,38 @@ import InputLabel from '@/Components/InputLabel.vue';
 import PrimaryButton from '@/Components/PrimaryButton.vue';
 import TextInput from '@/Components/TextInput.vue';
 import { Head, useForm } from '@inertiajs/inertia-vue3';
+import { Inertia } from '@inertiajs/inertia';
 
-defineProps({
-    skills: Array
+const props = defineProps({
+    skill: Object,
 });
 
 const form = useForm({
-    name: '',
+    name: props.skill?.name,
     image: null,
-    skill_id: '',
-    project_url: '',
 });
 
 const submit = () => {
-    form.post(route('projects.store'));
+    Inertia.post(`/skills/${props.skill.id}`, {
+        _method: "put",
+        name: form.name,
+        image: form.image,
+    });
 };
 </script>
 
 <template>
-    <Head title="New Project" />
+    <Head title="Edit Skill" />
 
     <AuthenticatedLayout>
         <template #header>
-            <h2 class="font-semibold text-xl text-gray-800 leading-tight">New Project</h2>
+            <h2 class="font-semibold text-xl text-gray-800 leading-tight">Edit Skill</h2>
         </template>
 
         <div class="py-12">
             <div class="max-w-md mx-auto sm:px-6 lg:px-8 bg-white">
                 <form class="p-4" @submit.prevent="submit">
                     <div>
-                        <InputLabel for="skill_id" value="Skill" />
-
-                        <select
-                            v-model="form.skill_id"
-                            id="skill_id"
-                            name="skill_id"
-                            class="
-                                mt-1
-                                block
-                                w-full
-                                pl-3
-                                pr-10
-                                py-2
-                                text-base
-                                border-gray-300
-                                focus:outline-none focus:ring-indigo-500 focus:border-indigo-500
-                                sm:text-sm
-                                rounded-md
-                            ">
-                            <option v-for="skill in skills" :key="skill.id" :value="skill.id">{{ skill.name }}</option>
-                        </select>
-
-                        <InputError class="mt-2" :message="$page.props.errors.skill_id" />
-                    </div>
-
-                    <div class="mt-2">
                         <InputLabel for="name" value="Name" />
 
                         <TextInput
@@ -72,20 +49,6 @@ const submit = () => {
                         />
 
                         <InputError class="mt-2" :message="$page.props.errors.name" />
-                    </div>
-
-                    <div class="mt-2">
-                        <InputLabel for="project_url" value="URL" />
-
-                        <TextInput
-                            id="project_url"
-                            type="project_url"
-                            class="mt-1 block w-full"
-                            v-model="form.project_url"
-                            autocomplete="projecturl"
-                        />
-
-                        <InputError class="mt-2" :message="$page.props.errors.project_url" />
                     </div>
 
                     <div class="mt-2">
@@ -103,7 +66,7 @@ const submit = () => {
 
                     <div class="flex items-center justify-end mt-4">
                         <PrimaryButton class="ml-4" :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
-                            Store
+                            Update
                         </PrimaryButton>
                     </div>
                 </form>
