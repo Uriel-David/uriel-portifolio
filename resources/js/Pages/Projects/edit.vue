@@ -14,6 +14,7 @@ const props = defineProps({
 
 const form = useForm({
     name: props.project?.name,
+    description: props.project?.description,
     image: null,
     skill_id: props.project?.skill_id,
     project_url: props.project?.project_url,
@@ -23,6 +24,7 @@ const submit = () => {
     Inertia.post(`/projects/${props.project.id}`, {
         _method: "put",
         name: form.name,
+        description: form.description,
         image: form.image,
         skill_id: form.skill_id,
         project_url: form.project_url
@@ -80,6 +82,19 @@ const submit = () => {
                         />
 
                         <InputError class="mt-2" :message="$page.props.errors.name" />
+                    </div>
+
+                    <div class="mt-2">
+                        <InputLabel for="description" value="description" />
+
+                        <textarea
+                            id="description"
+                            type="textarea"
+                            class="mt-1 block w-full"
+                            v-model="form.description"
+                        ></textarea>
+
+                        <InputError class="mt-2" :message="$page.props.errors.description" />
                     </div>
 
                     <div class="mt-2">

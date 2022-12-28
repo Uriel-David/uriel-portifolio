@@ -34,6 +34,9 @@ defineProps({
                                     Name
                                 </th>
                                 <th scope="col" class="py-3 px-6">
+                                    Description
+                                </th>
+                                <th scope="col" class="py-3 px-6">
                                     Skill
                                 </th>
                                 <th scope="col" class="py-3 px-6">
@@ -50,6 +53,9 @@ defineProps({
                                 </th>
                                 <td class="py-4 px-6">
                                     {{ project.name }}
+                                </td>
+                                <td class="py-4 px-6">
+                                    {{ project.description }}
                                 </td>
                                 <td class="py-4 px-6">
                                     {{ project.skill.name }}

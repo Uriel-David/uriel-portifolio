@@ -12,6 +12,7 @@ defineProps({
 
 const form = useForm({
     name: '',
+    description: '',
     image: null,
     skill_id: '',
     project_url: '',
@@ -72,6 +73,19 @@ const submit = () => {
                         />
 
                         <InputError class="mt-2" :message="$page.props.errors.name" />
+                    </div>
+
+                    <div class="mt-2">
+                        <InputLabel for="description" value="description" />
+
+                        <textarea
+                            id="description"
+                            type="textarea"
+                            class="mt-1 block w-full"
+                            v-model="form.description"
+                        ></textarea>
+
+                        <InputError class="mt-2" :message="$page.props.errors.description" />
                     </div>
 
                     <div class="mt-2">
