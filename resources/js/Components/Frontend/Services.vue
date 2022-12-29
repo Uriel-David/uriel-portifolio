@@ -6,9 +6,9 @@
     <section id="services" class="section bg-light-secondary dark:bg-dark-secondary">
         <div class="container mx-auto" v-motion :initial="{ opacity: 0, y: 100, }" :visible="{ opacity: 1, y: 0, }">
             <div class="flex flex-col items-center text-center">
-                <h2 class="section-title">What I do for clients</h2>
+                <h2 class="section-title">My main area of ​​expertise</h2>
                 <p class="subtitle">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus voluptates aut accusantium commodi, praesentium labore necessitatibus nam ab facere suscipit! Neque, maiores? Aliquid iste dignissimos voluptatum harum sunt dolor est!
+                    These are my areas of activity currently and that I have mastery and more expertise including technologies.
                 </p>
             </div>
             <div class="grid lg:grid-cols-4 gap-8">
@@ -24,57 +24,40 @@
                     </div>
                     <h4 class="text-xl font-medium mb-2">Web Design</h4>
                     <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae odit quod non cupiditate similique sunt officiis obcaecati? Autem repudiandae nesciunt blanditiis laboriosam optio sint velit vel dolores sunt, fugiat est?
+                        I have skills in the area of ​​UX / UI and screen planning and creation of institutional websites. With experience in projects, using tools like Figma, Storybook, among other web technologies.
                     </p>
                 </div>
                 <div class="bg-light-tail-100 dark:bg-dark-navy-500 p-6 rounded-2xl">
                     <div class="text-accent rounded-sm w-12 h-12 flex justify-center items-center mb-24 text-[28px]">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-24 w-24" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                            <path
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                                d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"
-                            />
-                            <path
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                                d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
-                            />
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-24 h-24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M14.25 9.75L16.5 12l-2.25 2.25m-4.5 0L7.5 12l2.25-2.25M6 20.25h12A2.25 2.25 0 0020.25 18V6A2.25 2.25 0 0018 3.75H6A2.25 2.25 0 003.75 6v12A2.25 2.25 0 006 20.25z" />
                         </svg>
                     </div>
                     <h4 class="text-xl font-medium mb-2">Web Development</h4>
                     <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae odit quod non cupiditate similique sunt officiis obcaecati? Autem repudiandae nesciunt blanditiis laboriosam optio sint velit vel dolores sunt, fugiat est?
+                        I have experience using web technologies with PHP, Java, Javascript/Typescript and Go, using the most diverse and current web frameworks, in several projects and companies.
                     </p>
                 </div>
                 <div class="bg-light-tail-100 dark:bg-dark-navy-500 p-6 rounded-2xl">
                     <div class="text-accent rounded-sm w-12 h-12 flex justify-center items-center mb-24 text-[28px]">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-24 w-24" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                            <path
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                                d="M14 10l-2 1m0 0l-2-1m2 1v2.5M20 7l-2 1m2-1l-2-1m2 1v2.5M14 4l-2-1-2 1M4 7l2-1M4 7l2 1M4 7v2.5M12 21l-2-1m2 1l2-1m-2 1v-2.5M6 18l-2-1v-2.5M18 18l2-1v-2.5"
-                            />
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-24 h-24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 1.5H8.25A2.25 2.25 0 006 3.75v16.5a2.25 2.25 0 002.25 2.25h7.5A2.25 2.25 0 0018 20.25V3.75a2.25 2.25 0 00-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3m-3 18.75h3" />
                         </svg>
                     </div>
                     <h4 class="text-xl font-medium mb-2">Mobile Development</h4>
                     <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae odit quod non cupiditate similique sunt officiis obcaecati? Autem repudiandae nesciunt blanditiis laboriosam optio sint velit vel dolores sunt, fugiat est?
+                        I have experience in mobile hybrid development, in technologies such as Flutter, React Native and Ionic, although I am not very practical, I also know a little about native development with Kotlin for Android.
                     </p>
                 </div>
                 <div class="bg-light-tail-100 dark:bg-dark-navy-500 p-6 rounded-2xl">
                     <div class="text-accent rounded-sm w-12 h-12 flex justify-center items-center mb-24 text-[28px]">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-24 w-24" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                            <path
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                                d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z"
-                            />
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-24 h-24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M5.25 14.25h13.5m-13.5 0a3 3 0 01-3-3m3 3a3 3 0 100 6h13.5a3 3 0 100-6m-16.5-3a3 3 0 013-3h13.5a3 3 0 013 3m-19.5 0a4.5 4.5 0 01.9-2.7L5.737 5.1a3.375 3.375 0 012.7-1.35h7.126c1.062 0 2.062.5 2.7 1.35l2.587 3.45a4.5 4.5 0 01.9 2.7m0 0a3 3 0 01-3 3m0 3h.008v.008h-.008v-.008zm0-6h.008v.008h-.008v-.008zm-3 6h.008v.008h-.008v-.008zm0-6h.008v.008h-.008v-.008z" />
                         </svg>
                     </div>
-                    <h4 class="text-xl font-medium mb-2">Project Planning</h4>
+                    <h4 class="text-xl font-medium mb-2">DevOps</h4>
                     <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae odit quod non cupiditate similique sunt officiis obcaecati? Autem repudiandae nesciunt blanditiis laboriosam optio sint velit vel dolores sunt, fugiat est?
+                        I have some experience with Cloud technologies such as AWS and GCP, I also deal with server administration and container technologies such as Docker e Ansible, I have little experience but I have solid basic knowledge.
                     </p>
                 </div>
             </div>

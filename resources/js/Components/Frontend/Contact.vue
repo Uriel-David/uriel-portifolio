@@ -36,7 +36,7 @@ const submit = () => {
             <div class="flex flex-col items-center text-center">
                 <h2 class="section-title">Contact Me</h2>
                 <a class="subtitle">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore distinctio nesciunt quisquam. A id, consectetur sit asperiores eius consequatur distinctio non rerum libero dolores ipsum aliquid dolore. Nemo, impedit tenetur?
+                    If you want to get in touch to talk about new projects or want to hire my services independently, there is a form below:
                 </a>
             </div>
             <div class="flex flex-col lg:flex-row lg:gap-x-8">

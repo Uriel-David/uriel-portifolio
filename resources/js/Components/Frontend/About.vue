@@ -17,9 +17,9 @@
                         </p>
                         <hr class="mb-8 opacity-90 dark:opacity-5" />
                         <p class="mb-8">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum debitis, tempore nobis enim eaque odit quisquam ad quos, non officiis, dolore quaerat quae facere ipsam delectus excepturi veniam iste obcaecati? <br />
+                            I have 5 years of experience in IT, specifically just over 3 years as a developer. I have already worked on projects in several areas, such as Education, Health, Retail, among others. I have partial training in Computer Science and Mathematics, in addition to specific courses in the area of ​​professional training, as a developer and systems/network administrator.<br />
                             <br />
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic provident, nulla veniam fugiat ea beatae sed reprehenderit harum animi corrupti nostrum eius. Libero quasi ducimus incidunt ipsum laborum, molestias architecto?
+                            Currently living in Europe, I'm working on international projects focusing mainly on web/mobile development, but always looking for new challenges and knowledge.
                         </p>
                     </div>
 
