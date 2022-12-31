@@ -18,6 +18,7 @@ class SkillResource extends JsonResource
             'id' => $this->id,
             'name' => $this->name,
             'image' => asset('/storage/' . $this->image),
+            'hide' => $this->hide,
         ];
     }
 }

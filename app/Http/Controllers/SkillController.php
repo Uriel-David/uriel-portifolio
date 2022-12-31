@@ -42,14 +42,16 @@ class SkillController extends Controller
     {
         $request->validate([
             'image' => ['required', 'image'],
-            'name' => ['required', 'min:3']
+            'name' => ['required', 'min:3'],
+            'hide' => ['required'],
         ]);
 
         if ($request->hasFile('image')) {
             $image = $request->file('image')->store('skills');
             Skill::create([
                 'name' => $request->name,
-                'image' => $image
+                'image' => $image,
+                'hide' => intval($request->hide),
             ]);
 
             return Redirect::route('skills.index');
@@ -80,7 +82,8 @@ class SkillController extends Controller
     {
         $image = $skill->image;
         $request->validate([
-            'name' => ['required', 'min:3']
+            'name' => ['required', 'min:3'],
+            'hide' => ['required'],
         ]);
 
         if ($request->hasFile('image')) {
@@ -90,7 +93,8 @@ class SkillController extends Controller
 
         $skill->update([
             'name' => $request->name,
-            'image' => $image
+            'image' => $image,
+            'hide' => $request->hide,
         ]);
 
         return Redirect::route('skills.index')->with('message', 'Skill updated successfully.');

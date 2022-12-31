@@ -26,13 +26,13 @@ const filterProjects = (id) => {
 <template>
     <div class="container mx-auto">
         <nav class="mb-12 border-b-2 border-light-tail-100 dark:text-dark-navy-100">
-            <ul class="flex flex-col lg:flex-row justify-evenly items-center">
-                <li class="cursor-pointer capitalize m-4">
+            <ul class="flex flex-col lg:flex-row justify-evenly items-center sm:grid sm:grid-flow-col sm:gap-x-2 sm:w-auto">
+                <li class="cursor-pointer capitalize mt-4 mb-4">
                     <button @click="filterProjects('all')" class="flex text-center px-4 py-2 hover:bg-accent text-white rounded-md" :class="[selectedSkill === 'all' ? 'bg-accent': 'bg-light-tail-500 dark:bg-dark-navy-100',]">
                         All
                     </button>
                 </li>
-                <li class="cursor-pointer capitalize m-4" v-for="projectSkill in skills.data" :key="projectSkill.id">
+                <li class="cursor-pointer capitalize mt-4 mb-4" v-for="projectSkill in skills.data" :class="[projectSkill.hide ? 'hidden sm:hidden' : '']" :key="projectSkill.id">
                     <button @click="filterProjects(projectSkill.id)" class="flex text-center px-4 py-2 hover:bg-accent text-white rounded-md" :class="[selectedSkill == projectSkill.id ? 'bg-accent': 'bg-light-tail-500 dark:bg-dark-navy-100',]">
                         {{ projectSkill.name }}
                     </button>

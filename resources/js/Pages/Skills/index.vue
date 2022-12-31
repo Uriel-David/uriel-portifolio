@@ -36,6 +36,9 @@ defineProps({
                                 <th scope="col" class="py-3 px-6">
                                     Image
                                 </th>
+                                <th scope="col" class="py-3 px-6">
+                                    Show/Hide
+                                </th>
                                 <th scope="col" class="py-3 px-6"></th>
                             </tr>
                         </thead>
@@ -51,6 +54,9 @@ defineProps({
                                 <td class="py-4 px-6">
                                     <img :src="skill.image" alt="skill image"
                                         class="w-12 h-12 rounded-full" />
+                                </td>
+                                <td class="py-4 px-6">
+                                    {{ skill.hide ? 'Show Skill' : 'Hide Skill' }}
                                 </td>
                                 <td class="py-4 px-6">
                                     <Link :href="route('skills.edit', skill.id)" class="font-medium text-blue-500 hover:text-blue-700 mr-2">edit</Link>
