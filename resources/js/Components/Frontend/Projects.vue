@@ -26,7 +26,7 @@ const filterProjects = (id) => {
 <template>
     <div class="container mx-auto">
         <nav class="mb-12 border-b-2 border-light-tail-100 dark:text-dark-navy-100 max-w-full">
-            <ul class="flex flex-col lg:flex-row justify-evenly items-center sm:grid sm:grid-flow-col sm:gap-x-2 sm:w-full">
+            <ul class="flex flex-wrap lg:flex-row justify-evenly items-center">
                 <li class="cursor-pointer capitalize mt-4 mb-4">
                     <button @click="filterProjects('all')" class="flex text-center px-4 py-2 hover:bg-accent text-white rounded-md" :class="[selectedSkill === 'all' ? 'bg-accent': 'bg-light-tail-500 dark:bg-dark-navy-100',]">
                         All
