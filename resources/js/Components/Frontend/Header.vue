@@ -24,7 +24,7 @@ onMounted(() => {
 </script>
 
 <template>
-    <nav class="bg-light-primary dark:bg-slate-800 border-gray-200 px-2 sm:px-4 py-2.5 rounded fixed z-20 w-full" :class="{ 'bg-lime-200 dark:bg-gradient-dark': scrollBg, 'bg-light-primary dark:bg-slate-800': !scrollBg }">
+    <nav class="bg-light-primary dark:bg-slate-800 border-gray-200 px-2 sm:px-4 py-2.5 rounded fixed z-20 w-full" :class="{ 'bg-lime-200 dark:bg-gradient-dark-nav': scrollBg, 'bg-light-primary dark:bg-slate-800': !scrollBg }">
         <div class="container flex flex-wrap items-center justify-between mx-auto">
             <a href="http://localhost:8000" class="flex items-center">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
@@ -40,7 +40,7 @@ onMounted(() => {
             </button>
 
             <div class="w-full md:block md:w-auto" :class="{ hidden: showMobileMenu }" id="navbar-default">
-                <ul class="flex flex-col p-4 mt-4 border border-light-tail-500 bg-lime-200 dark:bg-transparent dark:border-dark-navy-100 rounded-lg md:flex-row md:space-x-8 md:mt-0 md:font-medium md:border-0 ">
+                <ul class="flex flex-col p-4 mt-4 border border-light-tail-500 dark:bg-transparent dark:border-dark-navy-100 rounded-lg md:flex-row md:space-x-8 md:mt-0 md:font-medium md:border-0 ">
                     <li v-for="(navigation, index) in navigations" :key="index">
                         <a :href="navigation.href" class="block py-2 pl-3 pr-4 text-orange-700 dark:text-dark-navy-900 rounded hover:text-orange-900 hover:bg-lime-300 dark:hover:text-white dark:hover:bg-dark-navy-500" aria-current="page">{{ navigation.name }}</a>
                     </li>

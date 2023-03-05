@@ -22,9 +22,21 @@
 
     .bg-gradient-light {
         background: linear-gradient(45deg, #EDF1D6, #9DC08B, #609966, #40513B);
+        background-size: 300% 300%;
+        animation: bgColorsGradients 10s ease infinite;
     }
 
     .bg-gradient-dark {
+        background: linear-gradient(45deg, #635985, #443C68, #393053, #18122B);
+        background-size: 300% 300%;
+        animation: bgColorsGradients 15s ease infinite;
+    }
+
+    .bg-gradient-light-nav {
+        background: linear-gradient(45deg, #EDF1D6, #9DC08B, #609966, #40513B);
+    }
+
+    .bg-gradient-dark-nav {
         background: linear-gradient(45deg, #635985, #443C68, #393053, #18122B);
     }
 
@@ -104,6 +116,20 @@
 
         to {
             border-right-color: transparent;
+        }
+    }
+
+    @keyframes bgColorsGradients {
+        0% {
+            background-position: 0% 50%;
+        }
+
+        50% {
+            background-position: 100% 50%;
+        }
+
+        100% {
+            background-position: 0% 50%;
         }
     }
 }

@@ -12,7 +12,7 @@ defineProps({
         <div class="container mx-auto" v-motion :initial="{ opacity: 0, y: 100, }" :visible="{ opacity: 1, y: 0, }">
             <div class="flex flex-col items-center text-center">
                 <h2 class="section-title">My latest work</h2>
-                <p class="subtitle">
+                <p class="subtitle text-gray-900 dark:text-gray-500">
                     These are my main projects and jobs in more recent companies.
                 </p>
             </div>
