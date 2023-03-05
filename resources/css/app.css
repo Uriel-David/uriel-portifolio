@@ -16,6 +16,18 @@
         @apply text-slate-900 dark:text-white font-primary;
     }
 
+    p {
+        color: black;
+    }
+
+    .bg-gradient-light {
+        background: linear-gradient(45deg, #EDF1D6, #9DC08B, #609966, #40513B);
+    }
+
+    .bg-gradient-dark {
+        background: linear-gradient(45deg, #635985, #443C68, #393053, #18122B);
+    }
+
     .section {
         @apply py-12 lg:py-32;
     }
@@ -50,5 +62,48 @@
     
     .active {
         @apply text-accent;
+    }
+
+    .line {
+        border-right: 1px solid rgba(255, 255, 255, .75);
+        white-space: nowrap;
+        overflow: hidden;
+    }
+
+    .typing-animation {
+        animation: blinkCursor 900ms steps(30) infinite normal,
+            typing 4s steps(30) 1s normal both;
+    }
+
+    @keyframes typing {
+        from {
+            width: 0;
+        }
+
+        to {
+            width: 7.5em;
+        }
+    }
+
+    @media screen and (max-width: 767.98px) {
+        @keyframes typing {
+            from {
+                width: 0;
+            }
+    
+            to {
+                width: 8em;
+            }
+        }
+    }
+
+    @keyframes blinkCursor {
+        from {
+            border-right-color: rgba(255, 255, 255, .60);
+        }
+
+        to {
+            border-right-color: transparent;
+        }
     }
 }

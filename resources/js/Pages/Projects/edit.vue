@@ -17,6 +17,10 @@ const form = useForm({
     description: props.project?.description,
     image: null,
     skill_id: props.project?.skill_id,
+    skill_backend: props.project?.skill_backend,
+    skill_frontend: props.project?.skill_frontend,
+    skill_devops: props.project?.skill_devops,
+    skill_extra: props.project?.skill_extra,
     project_url: props.project?.project_url,
 });
 
@@ -27,6 +31,10 @@ const submit = () => {
         description: form.description,
         image: form.image,
         skill_id: form.skill_id,
+        skill_backend: form.skill_backend,
+        skill_frontend: form.skill_frontend,
+        skill_devops: form.skill_devops,
+        skill_extra: form.skill_extra,
         project_url: form.project_url
     });
 };
@@ -67,6 +75,106 @@ const submit = () => {
                         </select>
 
                         <InputError class="mt-2" :message="$page.props.errors.skill_id" />
+                    </div>
+
+                    <div>
+                        <InputLabel for="skill_backend" value="Skill - Backend" />
+
+                        <select
+                            v-model="form.skill_backend"
+                            id="skill_backend"
+                            name="skill_backend"
+                            class="
+                                mt-1
+                                block
+                                w-full
+                                pl-3
+                                pr-10
+                                py-2
+                                text-base
+                                border-gray-300
+                                focus:outline-none focus:ring-indigo-500 focus:border-indigo-500
+                                sm:text-sm
+                                rounded-md
+                            ">
+                            <option key="n/a" value="n/a">n/a</option>
+                            <option v-for="skill in skills" :key="skill.id" :value="skill.name">{{ skill.name }}</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <InputLabel for="skill_frontend" value="Skill - Frontend" />
+
+                        <select
+                            v-model="form.skill_frontend"
+                            id="skill_frontend"
+                            name="skill_frontend"
+                            class="
+                                mt-1
+                                block
+                                w-full
+                                pl-3
+                                pr-10
+                                py-2
+                                text-base
+                                border-gray-300
+                                focus:outline-none focus:ring-indigo-500 focus:border-indigo-500
+                                sm:text-sm
+                                rounded-md
+                            ">
+                            <option key="n/a" value="n/a">n/a</option>
+                            <option v-for="skill in skills" :key="skill.id" :value="skill.name">{{ skill.name }}</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <InputLabel for="skill_devops" value="Skill - DevOps" />
+
+                        <select
+                            v-model="form.skill_devops"
+                            id="skill_devops"
+                            name="skill_devops"
+                            class="
+                                mt-1
+                                block
+                                w-full
+                                pl-3
+                                pr-10
+                                py-2
+                                text-base
+                                border-gray-300
+                                focus:outline-none focus:ring-indigo-500 focus:border-indigo-500
+                                sm:text-sm
+                                rounded-md
+                            ">
+                            <option key="n/a" value="n/a">n/a</option>
+                            <option v-for="skill in skills" :key="skill.id" :value="skill.name">{{ skill.name }}</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <InputLabel for="skill_extra" value="Skill - Extra" />
+
+                        <select
+                            v-model="form.skill_extra"
+                            id="skill_extra"
+                            name="skill_extra"
+                            class="
+                                mt-1
+                                block
+                                w-full
+                                pl-3
+                                pr-10
+                                py-2
+                                text-base
+                                border-gray-300
+                                focus:outline-none focus:ring-indigo-500 focus:border-indigo-500
+                                sm:text-sm
+                                rounded-md
+                            ">
+                            <option key="n/a" value="n/a">n/a</option>
+                            <option v-for="skill in skills" :key="skill.id" :value="skill.name">{{ skill.name }}</option>
+                        </select>
                     </div>
 
                     <div class="mt-2">

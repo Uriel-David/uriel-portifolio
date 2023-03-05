@@ -3,11 +3,11 @@
 </script>
 
 <template>
-    <section id="services" class="section bg-light-secondary dark:bg-dark-secondary">
+    <section id="services" class="section bg-gradient-light dark:bg-gradient-dark">
         <div class="container mx-auto" v-motion :initial="{ opacity: 0, y: 100, }" :visible="{ opacity: 1, y: 0, }">
             <div class="flex flex-col items-center text-center">
                 <h2 class="section-title">My main area of ​​expertise</h2>
-                <p class="subtitle">
+                <p class="subtitle text-gray-900 dark:text-gray-400">
                     These are my areas of activity currently and that I have mastery and more expertise including technologies.
                 </p>
             </div>
@@ -23,7 +23,7 @@
                         </svg>
                     </div>
                     <h4 class="text-xl font-medium mb-2">Web Design</h4>
-                    <p>
+                    <p class="dark:text-white">
                         I have skills in the area of ​​UX / UI and screen planning and creation of institutional websites. With experience in projects, using tools like Figma, Storybook, among other web technologies.
                     </p>
                 </div>
@@ -34,7 +34,7 @@
                         </svg>
                     </div>
                     <h4 class="text-xl font-medium mb-2">Web Development</h4>
-                    <p>
+                    <p class="dark:text-white">
                         I have experience using web technologies with PHP, Java, Javascript/Typescript and Go, using the most diverse and current web frameworks, in several projects and companies.
                     </p>
                 </div>
@@ -45,7 +45,7 @@
                         </svg>
                     </div>
                     <h4 class="text-xl font-medium mb-2">Mobile Development</h4>
-                    <p>
+                    <p class="dark:text-white">
                         I have experience in mobile hybrid development, in technologies such as Flutter, React Native and Ionic, although I am not very practical, I also know a little about native development with Kotlin for Android.
                     </p>
                 </div>
@@ -56,7 +56,7 @@
                         </svg>
                     </div>
                     <h4 class="text-xl font-medium mb-2">DevOps</h4>
-                    <p>
+                    <p class="dark:text-white">
                         I have some experience with Cloud technologies such as AWS and GCP, I also deal with server administration and container technologies such as Docker e Ansible, I have little experience but I have solid basic knowledge.
                     </p>
                 </div>

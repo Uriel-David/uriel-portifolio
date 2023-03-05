@@ -31,11 +31,11 @@ const submit = () => {
 </script>
 
 <template>
-    <section id="contact" class="section bg-light-primary dark:bg-dark-primary">
+    <section id="contact" class="section bg-gradient-light dark:bg-gradient-dark">
         <div class="container mx-auto md:max-w-5xl sm:max-w-sm" v-motion :initial="{ opacity: 0, y: 100, }" :visible="{ opacity: 1, y: 0, }">
             <div class="flex flex-col items-center text-center">
                 <h2 class="section-title">Contact Me</h2>
-                <a class="subtitle">
+                <a class="subtitle text-gray-900 dark:text-gray-400">
                     If you want to get in touch to talk about new projects or want to hire my services independently, there is a form below:
                 </a>
             </div>
@@ -49,7 +49,7 @@ const submit = () => {
                         </div>
                         <div>
                             <h4 class="font-body text-xl mb-1">Have a question?</h4>
-                            <p class="mb-1 text-paragraph">I'm here help you.</p>
+                            <p class="mb-1 text-gray-700 dark:text-gray-400">I'm here help you.</p>
                             <p class="text-accent font-normal">Email me at uriel.dqaa@gmail.com</p>
                         </div>
                     </div>
@@ -62,7 +62,7 @@ const submit = () => {
                         </div>
                         <div>
                             <h4 class="font-body text-xl mb-1">Current Location</h4>
-                            <p class="mb-1 text-paragraph">Porto, Portugal</p>
+                            <p class="mb-1 text-gray-700 dark:text-gray-400">Porto, Portugal</p>
                             <p class="text-accent font-normal">Serving clients worldwide.</p>
                         </div>
                     </div>
@@ -74,19 +74,19 @@ const submit = () => {
                     <div class="flex gap-8">
                         <div>
                             <input v-model="form.name" type="text" class="input" placeholder="Your Name" />
-                            <span v-if="form.errors.name" class="text-sm m-2 text-red-400">{{ form.errors.name }}</span>
+                            <span v-if="form.errors.name" class="text-sm m-2 text-red-700">{{ form.errors.name }}</span>
                         </div>
                         <div>
                             <input v-model="form.email" type="email" class="input" placeholder="Your Email" />
-                            <span v-if="form.errors.email" class="text-sm m-2 text-red-400">{{ form.errors.email }}</span>
+                            <span v-if="form.errors.email" class="text-sm m-2 text-red-700">{{ form.errors.email }}</span>
                         </div>
                     </div>
                     <div>
                         <input v-model="form.subject" type="text" class="input" placeholder="Your Subject" />
-                        <span v-if="form.errors.subject" class="text-sm m-2 text-red-400">{{ form.errors.subject }}</span>
+                        <span v-if="form.errors.subject" class="text-sm m-2 text-red-700">{{ form.errors.subject }}</span>
                     </div>
                     <textarea v-model="form.body" class="textarea" placeholder="Your Message" spellcheck="false"></textarea>
-                    <span v-if="form.errors.body" class="text-sm m-2 text-red-400">{{ form.errors.body }}</span>
+                    <span v-if="form.errors.body" class="text-sm m-2 text-red-700">{{ form.errors.body }}</span>
                     <button class="btn btn-lg bg-accent hover:bg-secondary text-white">
                         Send message
                     </button>

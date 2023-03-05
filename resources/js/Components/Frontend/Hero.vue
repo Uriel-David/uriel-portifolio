@@ -2,21 +2,21 @@
 </script>
 
 <template>
-    <section id="home" class="lg:h-[85vh] flex items-center bg-light-primary dark:bg-dark-primary py-32 lg:py-0 overflow-hidden">
+    <section id="home" class="lg:h-[105vh] flex items-center bg-gradient-light dark:bg-gradient-dark py-32 lg:py-0 overflow-hidden">
         <div class="container mx-auto h-full" v-motion :initial="{ opacity: 0, y: 100, }" :enter="{ opacity: 1, y: 0, }">
-            <div class="flex flex-col md:flex-row items-center h-full pt-8">
+            <div class="flex flex-col md:flex-row items-center h-full pt-20">
                 <div class="flex-1 flex flex-col items-center lg:items-start">
-                    <p class="text-lg text-accent text-md mb-[22px]">Hey, I'm Uriel! 👋</p>
-                    <h1 class="text-4xl leading-[44px] md:text-5xl md:leading-tight lg:text-7xl lg:leading-[1.2] font-bold md:tracking-[-2px]">
+                    <p class="line typing-animation text-lg text-accent text-md mb-[22px]">Hey, I'm Uriel!👋</p>
+                    <h1 class="line typing-animation text-4xl leading-[44px] md:text-5xl md:leading-tight lg:text-6xl lg:leading-[1.2] font-bold md:tracking-[-2px]">
                         I Build & Design <br /> Web/Mobile Apps
                     </h1>
-                    <p class="pt-4 pb-8 md:pt-6 md:pb-12 max-w-[480px] text-lg text-center lg:text-left">
+                    <p class="pt-2 pb-4 md:pt-4 md:pb-6 max-w-[480px] text-lg text-center lg:text-left dark:text-orange-200">
                         In this portfolio you will find a little about me as a professional and also some of my projects. If you want to get in touch or request a service, there is a form at the end of the page or by clicking on the button below.
                     </p>
-                    <a href="#contact" class="btn btn-md bg-accent hover:bg-light-secondary hover:text-light-tail-500 dark:hover:bg-dark-secondary dark:hover:text-dark-navy-100 md:btn-lg transition-all">
+                    <a href="#contact" class="btn btn-md text-black bg-accent hover:bg-light-secondary hover:text-light-tail-500 dark:hover:bg-dark-secondary dark:hover:text-dark-navy-100 md:btn-lg transition-all">
                         Work with me
                     </a>
-                    <h5 class="text-lg flex justify-center lg:justify-start items-center text-black dark:text-white mb-2">Follow me on</h5>
+                    <h5 class="text-lg flex justify-center lg:justify-start items-center dark:text-white mb-2">Follow me on</h5>
                     <div class="flex ml-4 md:ml-0 items-center mb-6">
                         <a
                             class="

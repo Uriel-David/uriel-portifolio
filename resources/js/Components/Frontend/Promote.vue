@@ -10,10 +10,7 @@
             </h2>
             <div class="mt-8 flex lg:mt-0 lg:flex-shrink-0">
                 <div class="inline-flex rounded-md shadow">
-                    <a href="#portfolio" class="inline-flex items-center justify-center rounded-md border border-transparent bg-light-secondary dark:bg-dark-secondary px-5 py-3 text-base font-medium text-dark-primary dark:text-white hover:bg-light-primary dark:hover:bg-dark-primary">Know more</a>
-                </div>
-                <div class="ml-3 inline-flex rounded-md shadow">
-                    <a href="#services" class="inline-flex items-center justify-center rounded-md border border-transparent bg-white px-5 py-3 text-base font-medium text-indigo-600 hover:bg-indigo-50">See more</a>
+                    <a href="https://github.com/Uriel-David/uriel-portifolio" target="_blank" class="inline-flex items-center justify-center rounded-md border border-transparent bg-light-secondary dark:bg-dark-secondary px-5 py-3 text-base font-medium text-dark-primary dark:text-white hover:bg-light-primary dark:hover:bg-dark-primary">Know my portfolio (Code)</a>
                 </div>
             </div>
         </div>
