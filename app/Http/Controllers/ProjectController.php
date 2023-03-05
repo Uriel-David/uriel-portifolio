@@ -53,6 +53,10 @@ class ProjectController extends Controller
             $image = $request->file('image')->store('projects');
             Project::create([
                 'skill_id' => $request->skill_id,
+                'skill_backend' => $request->skill_backend,
+                'skill_frontend' => $request->skill_frontend,
+                'skill_devops' => $request->skill_devops,
+                'skill_extra' => $request->skill_extra,
                 'name' => $request->name,
                 'description' => $request->description,
                 'image' => $image,
@@ -103,6 +107,10 @@ class ProjectController extends Controller
             'description' => $request->description,
             'image' => $image,
             'skill_id' => $request->skill_id,
+            'skill_backend' => $request->skill_backend,
+            'skill_frontend' => $request->skill_frontend,
+            'skill_devops' => $request->skill_devops,
+            'skill_extra' => $request->skill_extra,
             'project_url' => $request->project_url
         ]);
 
