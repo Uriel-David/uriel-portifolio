@@ -2,15 +2,23 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\SkillRequest;
 use App\Http\Resources\SkillResource;
+use App\Http\Services\SkillService;
 use App\Models\Skill;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Storage;
 use Inertia\Inertia;
 
 class SkillController extends Controller
 {
+    private $skillService;
+
+    public function __construct(SkillService $skillService)
+    {
+        $this->skillService = $skillService;
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -18,7 +26,7 @@ class SkillController extends Controller
      */
     public function index()
     {
-        $skills = SkillResource::collection(Skill::all());
+        $skills = SkillResource::collection($this->skillService->getList());
         return Inertia::render('Skills/index', compact('skills'));
     }
 
@@ -38,21 +46,17 @@ class SkillController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(SkillRequest $request)
     {
-        $request->validate([
-            'image' => ['required', 'image'],
-            'name' => ['required', 'min:3'],
-            'hide' => ['required'],
-        ]);
+        $request->validated();
+        $data = [];
+        foreach ($request->except('image') as $key => $value) {
+            $data[$key] = $value;
+        }
 
         if ($request->hasFile('image')) {
-            $image = $request->file('image')->store('skills');
-            Skill::create([
-                'name' => $request->name,
-                'image' => $image,
-                'hide' => intval($request->hide),
-            ]);
+            $data['image'] = $request->file('image')->store('skills');
+            $this->skillService->store($data);
 
             return Redirect::route('skills.index');
         }
@@ -78,24 +82,20 @@ class SkillController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Skill $skill)
+    public function update(SkillRequest $request, Skill $skill)
     {
-        $image = $skill->image;
-        $request->validate([
-            'name' => ['required', 'min:3'],
-            'hide' => ['required'],
-        ]);
+        $request->safe()->only(['name', 'hide']);
+        $data = [];
+        foreach ($request->except('image') as $key => $value) {
+            $data[$key] = $value;
+        }
 
         if ($request->hasFile('image')) {
             Storage::delete($skill->image);
-            $image = $request->file('image')->store('skills');
+            $data['image'] = $request->file('image')->store('skills');
         }
 
-        $skill->update([
-            'name' => $request->name,
-            'image' => $image,
-            'hide' => $request->hide,
-        ]);
+        $this->skillService->update($data, $skill->id);
 
         return Redirect::route('skills.index')->with('message', 'Skill updated successfully.');
     }
@@ -109,7 +109,7 @@ class SkillController extends Controller
     public function destroy(Skill $skill)
     {
         Storage::delete($skill->image);
-        $skill->delete();
+        $this->skillService->destroy($skill->id);
 
         return Redirect::back()->with('message', 'Skill deleted successfully.');
     }
