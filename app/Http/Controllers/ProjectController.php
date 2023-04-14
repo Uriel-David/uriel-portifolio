@@ -4,12 +4,14 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\ProjectRequest;
 use App\Http\Resources\ProjectResource;
-use App\Models\Project;
 use App\Http\Services\ProjectService;
 use App\Http\Services\SkillService;
+use App\Models\Project;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Storage;
 use Inertia\Inertia;
+use Inertia\Response;
 
 class ProjectController extends Controller
 {
@@ -27,7 +29,7 @@ class ProjectController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(): Response
     {
         $projects = ProjectResource::collection($this->projectService->getList());
         return Inertia::render('Projects/index', compact('projects'));
@@ -38,7 +40,7 @@ class ProjectController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(): Response
     {
         $skills = $this->skillService->getList();
         return Inertia::render('Projects/create', compact('skills'));
@@ -50,22 +52,9 @@ class ProjectController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(ProjectRequest $request)
+    public function store(ProjectRequest $request): RedirectResponse
     {
-        $request->validated();
-        $data = [];
-        foreach ($request->except('image') as $key => $value) {
-            $data[$key] = $value;
-        }
-
-        if ($request->hasFile('image')) {
-            $data['image'] = $request->file('image')->store('projects');
-            $this->projectService->store($data);
-
-            return Redirect::route('projects.index')->with('message', 'Project created successfully.');
-        }
-
-        return Redirect::back();
+        return $this->projectService->store($request);
     }
 
     /**
@@ -74,7 +63,7 @@ class ProjectController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Project $project)
+    public function edit(Project $project): Response
     {
         $skills = $this->skillService->getList();
         return Inertia::render('Projects/edit', compact('project', 'skills'));
@@ -87,21 +76,9 @@ class ProjectController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(ProjectRequest $request, Project $project)
+    public function update(ProjectRequest $request, Project $project): RedirectResponse
     {
-        $request->safe()->only(['name', 'description', 'skill_id']);
-        foreach ($request->except('image') as $key => $value) {
-            $data[$key] = $value;
-        }
-
-        if ($request->hasFile('image')) {
-            Storage::delete($project->image);
-            $data['image'] = $request->file('image')->store('projects');
-        }
-
-        $this->projectService->update($data, $project->id);
-
-        return Redirect::route('projects.index')->with('message', 'Project updated successfully.');
+        return $this->projectService->update($request, $project, $project->id);
     }
 
     /**
@@ -110,7 +87,7 @@ class ProjectController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Project $project)
+    public function destroy(Project $project): RedirectResponse
     {
         Storage::delete($project->image);
         $this->projectService->destroy($project->id);

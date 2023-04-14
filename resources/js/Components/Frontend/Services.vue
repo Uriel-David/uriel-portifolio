@@ -57,7 +57,7 @@
                     </div>
                     <h4 class="text-xl font-medium mb-2">DevOps</h4>
                     <p class="dark:text-white">
-                        I have some experience with Cloud technologies such as AWS and GCP, I also deal with server administration and container technologies such as Docker e Ansible, I have little experience but I have solid basic knowledge.
+                        I have some experience with Cloud technologies such as AWS and GCP, I also deal with server administration and container technologies such as Docker and Ansible, I have little experience but I have solid basic knowledge.
                     </p>
                 </div>
             </div>

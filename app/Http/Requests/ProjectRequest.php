@@ -22,7 +22,7 @@ class ProjectRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'image' => ['required', 'image'],
+            'image' => ['image'],
             'name' => ['required', 'min:3'],
             'description' => ['required', 'min:3'],
             'skill_id' => ['required'],

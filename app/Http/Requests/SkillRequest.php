@@ -22,7 +22,7 @@ class SkillRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'image' => ['required', 'image'],
+            'image' => ['image'],
             'name'  => ['required', 'min:3'],
             'hide'  => ['required'],
         ];

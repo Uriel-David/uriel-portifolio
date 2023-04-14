@@ -6,9 +6,11 @@ use App\Http\Requests\SkillRequest;
 use App\Http\Resources\SkillResource;
 use App\Http\Services\SkillService;
 use App\Models\Skill;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Storage;
 use Inertia\Inertia;
+use Inertia\Response;
 
 class SkillController extends Controller
 {
@@ -24,7 +26,7 @@ class SkillController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(): Response
     {
         $skills = SkillResource::collection($this->skillService->getList());
         return Inertia::render('Skills/index', compact('skills'));
@@ -35,7 +37,7 @@ class SkillController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(): Response
     {
         return Inertia::render('Skills/create');
     }
@@ -46,22 +48,9 @@ class SkillController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(SkillRequest $request)
+    public function store(SkillRequest $request): RedirectResponse
     {
-        $request->validated();
-        $data = [];
-        foreach ($request->except('image') as $key => $value) {
-            $data[$key] = $value;
-        }
-
-        if ($request->hasFile('image')) {
-            $data['image'] = $request->file('image')->store('skills');
-            $this->skillService->store($data);
-
-            return Redirect::route('skills.index');
-        }
-
-        return Redirect::back()->with('message', 'Skill created successfully.');
+        return $this->skillService->store($request);
     }
 
     /**
@@ -70,7 +59,7 @@ class SkillController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Skill $skill)
+    public function edit(Skill $skill): Response
     {
         return Inertia::render('Skills/edit', compact('skill'));
     }
@@ -82,22 +71,9 @@ class SkillController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(SkillRequest $request, Skill $skill)
+    public function update(SkillRequest $request, Skill $skill): RedirectResponse
     {
-        $request->safe()->only(['name', 'hide']);
-        $data = [];
-        foreach ($request->except('image') as $key => $value) {
-            $data[$key] = $value;
-        }
-
-        if ($request->hasFile('image')) {
-            Storage::delete($skill->image);
-            $data['image'] = $request->file('image')->store('skills');
-        }
-
-        $this->skillService->update($data, $skill->id);
-
-        return Redirect::route('skills.index')->with('message', 'Skill updated successfully.');
+        return $this->skillService->update($request, $skill, $skill->id);
     }
 
     /**
@@ -106,7 +82,7 @@ class SkillController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Skill $skill)
+    public function destroy(Skill $skill): RedirectResponse
     {
         Storage::delete($skill->image);
         $this->skillService->destroy($skill->id);
