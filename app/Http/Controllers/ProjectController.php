@@ -89,8 +89,8 @@ class ProjectController extends Controller
      */
     public function destroy(Project $project): RedirectResponse
     {
-        Storage::delete($project->image);
         $this->projectService->destroy($project->id);
+        Storage::delete($project->image);
 
         return Redirect::back()->with('message', 'Project deleted successfully.');
     }

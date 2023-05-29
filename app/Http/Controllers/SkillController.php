@@ -84,8 +84,8 @@ class SkillController extends Controller
      */
     public function destroy(Skill $skill): RedirectResponse
     {
-        Storage::delete($skill->image);
         $this->skillService->destroy($skill->id);
+        Storage::delete($skill->image);
 
         return Redirect::back()->with('message', 'Skill deleted successfully.');
     }
