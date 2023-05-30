@@ -39,7 +39,7 @@ const filterProjects = (id) => {
                 </li>
             </ul>
         </nav>
-        <section class="grid gap-y-12 lg:grid-cols-3 lg:gap-8">
+        <section class="lg:grid lg:gap-y-12 lg:grid-cols-3 lg:gap-8">
             <Project v-for="project in filteredProjects" :key="project.id" :project="project" />
         </section>
     </div>

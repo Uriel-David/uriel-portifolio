@@ -32,7 +32,7 @@ const submit = () => {
 
 <template>
     <section id="contact" class="section bg-gradient-light dark:bg-gradient-dark">
-        <div class="container mx-auto md:max-w-5xl sm:max-w-sm" v-motion :initial="{ opacity: 0, y: 100, }" :visible="{ opacity: 1, y: 0, }">
+        <div class="container mx-auto sm:max-w-sm md:max-w-md lg:max-w-5xl" v-motion :initial="{ opacity: 0, y: 100, }" :visible="{ opacity: 1, y: 0, }">
             <div class="flex flex-col items-center text-center">
                 <h2 class="section-title">Contact Me</h2>
                 <a class="subtitle text-gray-900 dark:text-gray-400">
