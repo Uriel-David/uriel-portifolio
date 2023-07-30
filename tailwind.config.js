@@ -3,6 +3,7 @@ const colors = require('tailwindcss/colors');
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+    darkMode: 'class',
     content: [
         './vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php',
         './storage/framework/views/*.php',
@@ -26,8 +27,8 @@ module.exports = {
             colors: {
                 'light-primary': '#FAF1E6',
                 'light-secondary': '#FDFAF6',
-                'light-tail-100': '#A9DED2',
-                'light-tail-500': '#54BAB9',
+                'light-tail-100': '#32a86f',
+                'light-tail-500': '#3285a8',
                 'dark-primary': '#050402',
                 'dark-secondary': '#1C1D24',
                 'dark-navy-100': '#07567D',
