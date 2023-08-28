@@ -19,7 +19,7 @@ defineProps({
     <Head>
         <title>Uriel David - Software Solutions</title>
         <meta name="title" content="Uriel David - Software Solutions" />
-        <meta name="description" content="Website for exposing my portfolio and contracting my services." />
+        <meta name="description" content="Site for displaying my portfolio and work for others. On this site you will be able to see my work and skills in more detail, and if you wish, you can hire my services through a contact form or by email." />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://www.uriel-portfolio.com/" />
         <meta property="og:title" content="Uriel David - Software Solutions" />
