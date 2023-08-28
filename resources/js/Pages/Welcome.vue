@@ -17,22 +17,19 @@ defineProps({
 
 <template>
     <Head>
-        <!-- Primary Meta Tags -->
         <title>Uriel David - Software Solutions</title>
         <meta name="title" content="Uriel David - Software Solutions" />
         <meta name="description" content="Website for exposing my portfolio and contracting my services." />
-        <!-- Open Graph / Facebook -->
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://www.uriel-portfolio.com/" />
         <meta property="og:title" content="Uriel David - Software Solutions" />
         <meta property="og:description" content="Website for exposing my portfolio and contracting my services." />
         <meta property="og:image" content="https://github.com/Uriel-David.png" />
-        <!-- Twitter -->
         <meta property="twitter:card" content="summary_large_image" />
         <meta property="twitter:url" content="https://www.uriel-portfolio.com/" />
         <meta property="twitter:title" content="Uriel David - Software Solutions" />
         <meta property="twitter:description" content="Website for exposing my portfolio and contracting my services." />
-        <meta property="twitter:image" content="https://metatags.io/images/meta-tags.png" />
+        <meta property="twitter:image" content="https://github.com/Uriel-David.png" />
     </Head>
     <FrontendLayout>
         <Hero />
